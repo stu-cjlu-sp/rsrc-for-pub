@@ -5,3 +5,7 @@
 [2] Jiang M, Zhou F, Shen L, et al. Multilayer Decomposition Denoising Empowered CNN for Radar Signal Modulation Recognition[J]. IEEE Access, 2024.
 
 [VMD-LMD-WT](VMD-LMD-WT)
+
+[3] Li H, Quan D, Zhou F, et al. Radar Signal Recognition Based on Multi-task Learning[J]. IEEE Access, 2024.
+
+[MTL](MTL).
