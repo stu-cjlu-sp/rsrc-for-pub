@@ -13,3 +13,6 @@
 [4] Chen Y, Quan D, Yu K, et al. SFUnet-DCNN: An effective approach for LPI radar waveform recognition under low SNR conditions[J]. IEEE Sensors Journal, 2025.
 
 [SFUnet_DCNN](SFUnet-DCNN)
+
+[5] Quan D, Yu K, Wang X, et al. Multi-component radar signal recognition via signal quantity detection and feature enhancement[J]. IEEE Sensors Journal, 2025.
+[SQDandFE](SQDandFE)
