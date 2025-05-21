@@ -9,3 +9,7 @@
 [3] Li H, Quan D, Zhou F, et al. Radar Signal Recognition Based on Multi-task Learning[J]. IEEE Access, 2024.
 
 [MTL](MTL).
+
+[4] Chen Y, Quan D, Yu K, et al. SFUnet-DCNN: An effective approach for LPI radar waveform recognition under low SNR conditions[J]. IEEE Sensors Journal, 2025.
+
+[SFUnet_DCNN]
