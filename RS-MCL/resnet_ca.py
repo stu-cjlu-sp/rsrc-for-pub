@@ -62,7 +62,6 @@ def ResNet_ca(im_height, im_width, weight_decay=None):
     x = tf.keras.layers.Activation('relu')(x)
     x = tf.keras.layers.ZeroPadding2D(padding=(1,1))(x)
     x = tf.keras.layers.MaxPool2D(pool_size=3, strides=2, padding='valid')(x)
-    x = CoordAtt(x)
     x = BasicBlock1(x, num_channels=64, kernel_size=3, num_blocks=2, skip_blocks=[], regularizer=regularizer)
     x = CoordAtt(x)
     x = BasicBlock1(x, num_channels=128, kernel_size=3, num_blocks=2, skip_blocks=[0], regularizer=regularizer)
