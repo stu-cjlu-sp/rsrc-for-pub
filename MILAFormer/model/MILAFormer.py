@@ -59,9 +59,9 @@ class SELayer(nn.Module):
         y = self.fc(y).view(b, c, 1)
         return x * y.expand_as(x)
 
-class Fusion(nn.Module):
+class FEE(nn.Module):
     def __init__(self, input_channel, drop):
-        super(Fusion, self).__init__()
+        super(FEE, self).__init__()
         self.conv = nn.Sequential(
             nn.Conv1d(input_channel, input_channel, kernel_size=1),  # pointwise conv
             nn.Conv1d(input_channel, input_channel, kernel_size=5, padding=2, groups=input_channel),  # depthwise conv
@@ -425,7 +425,7 @@ class MILAFormer(nn.Module):
         self.fork_feat = fork_feat
         self.BN = nn.BatchNorm1d(2)
         self.patch_embedIQ = stemIQ(2, embed_dims[0]//4)
-        self.fusion = Fusion(embed_dims[0]//8,drop_rate)
+        self.fee = FEE(embed_dims[0]//8,drop_rate)
         network = []
         for i in range(len(layers)):
             stage = Stage(embed_dims[i], i, layers, mlp_ratio=mlp_ratios,
@@ -483,7 +483,7 @@ class MILAFormer(nn.Module):
     def forward(self, x):
         x = self.BN(x)
         x = self.patch_embedIQ(x)
-        x = self.fusion(x)  
+        x = self.fee(x)  
         x,_ = self.patch_LSTM(x.permute(0,2,1))
         x = self.forward_tokens(x.permute(0,2,1))
         x = self.norm(x)
